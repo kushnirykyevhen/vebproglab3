@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="Author" content="Кушнірик Євген Олександрович">
+<meta name="Description" content="Загальна інформація про вигадану фірму Rosa Bella - продаж косметики.">
+<meta name="Keywords" content="косметика, Rosa Bella, магазин, догляд за шкірою">
+<title>Про фірму Rosa Bella</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, print">
+</head>
+<body>
+
+<div id="wrapper" class="page">
+
+  <header class="site-header">
+    <h1>Rosa Bella — продаж косметики</h1>
+    <h5 class="subtitle">Сертифікована косметика з гарантованим терміном придатності</h5>
+  </header>
+
+  <nav class="menu" lang="uk" dir="ltr">
+    <ul>
+      <li><a href="index.html" title="Сторінка автора">Про автора</a></li>
+      <li><a href="company.html" title="Сторінка фірми">Про фірму</a></li>
+      <li><a href="news.html" title="Новини фірми">Новини</a></li>
+      <li><a href="lists.html" title="Інформація у вигляді списків">Списки</a></li>
+      <li><a href="menu.html" title="Меню сайту" accesskey="m">Меню сайту</a></li>
+      <li><a href="https://github.com/kushnirykyevhen/vebproglab3" target="_blank">Репозиторій</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+
+    <main class="main">
+
+      <section class="article">
+        <h2>Про фірму</h2>
+        <p>
+          Фірма <b>Rosa Bella</b> — вигаданий інтернет-магазин, що спеціалізується на
+          продажу косметики та засобів догляду за шкірою, волоссям і тілом. Ми працюємо
+          безпосередньо з виробниками та пропонуємо лише сертифіковану продукцію з
+          гарантованим терміном придатності.
+        </p>
+        <figure class="figure">
+          <img src="img/logo.svg" alt="Логотип фірми Rosa Bella" width="300" height="120">
+          <figcaption>Логотип фірми Rosa Bella</figcaption>
+        </figure>
+      </section>
+
+      <section class="article">
+        <h2>Наші принципи</h2>
+        <p>
+          Усі товари проходять перевірку якості. Ціни вказано в гривнях за курсом
+          <abbr class="short" lang="uk" title="Національний банк України">НБУ</abbr>,
+          а послуги доставки здійснюються через партнерські служби. Для косметики
+          важливо контролювати <abbr class="short" lang="uk" title="Термін придатності">ТП</abbr>,
+          тому в каталозі він указаний для кожної позиції.
+        </p>
+        <div class="box">
+          <div class="box-inner">
+            <h3>Якість</h3>
+            <p>Кожна партія перевіряється перед надходженням на склад.</p>
+          </div>
+          <div class="box-inner">
+            <h3>Свіжість</h3>
+            <p>Термін придатності вказано для кожного товару в каталозі.</p>
+          </div>
+          <div class="box-inner">
+            <h3>Доставка</h3>
+            <p>Від 1 до 3 днів по всій Україні через партнерські служби.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="article">
+        <h2>Каталог продукції</h2>
+        <table class="grid catalog">
+          <thead>
+            <tr>
+              <th>Вид</th>
+              <th>Марка</th>
+              <th>Виробник</th>
+              <th>Термін придатності</th>
+              <th>Ціна, грн</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Крем для обличчя</td>
+              <td>Aqua Glow</td>
+              <td>Dermia (Франція)</td>
+              <td>до 12.2027</td>
+              <td>420</td>
+            </tr>
+            <tr>
+              <td>Туш для вій</td>
+              <td>Black Velvet</td>
+              <td>Lumiere (Італія)</td>
+              <td>до 06.2027</td>
+              <td>260</td>
+            </tr>
+            <tr>
+              <td>Помада</td>
+              <td>Rouge Classic</td>
+              <td>Lumiere (Італія)</td>
+              <td>до 09.2028</td>
+              <td>310</td>
+            </tr>
+            <tr>
+              <td>Шампунь</td>
+              <td>Silk Hair</td>
+              <td>Naturelle (Польща)</td>
+              <td>до 03.2028</td>
+              <td>185</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="5">Ціни дійсні на жовтень 2026 року</td></tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section class="article">
+        <h2>Розрахунок вартості замовлення</h2>
+        <p>Формула підсумкової вартості зі знижкою, яку використовує наш сайт:</p>
+        <p>
+          <code class="formula" lang="en">
+            <var lang="en" class="v">total</var> =
+            <var lang="en" class="v">price</var> *
+            <var lang="en" class="v">count</var> *
+            (1 - <var lang="en" class="v">discount</var>);
+          </code>
+        </p>
+        <p>
+          Тут <var lang="en" class="v">price</var> — ціна одиниці товару,
+          <var lang="en" class="v">count</var> — кількість,
+          <var lang="en" class="v">discount</var> — знижка постійного клієнта.
+        </p>
+        <p>Приклад обчислення у вигляді текстової таблиці:
+          <span class="mini-table">
+            <span class="mini-row"><span class="mini-cell">price</span><span class="mini-cell">420</span></span>
+            <span class="mini-row"><span class="mini-cell">count</span><span class="mini-cell">2</span></span>
+            <span class="mini-row"><span class="mini-cell">total</span><span class="mini-cell">756</span></span>
+          </span>
+          при знижці 10%.
+        </p>
+      </section>
+
+      <section class="article">
+        <h2>Умови доставки</h2>
+<pre lang="uk" class="delivery">
+Доставка по Україні:   1-3 дні
+Безкоштовно від:       1000 грн
+Оплата:                картка / післяплата
+Повернення:            протягом 14 днів
+</pre>
+      </section>
+
+      <section class="article">
+        <h2>Відгук покупця</h2>
+        <blockquote lang="uk" class="review">
+          Замовляю косметику в Rosa Bella вже другий рік. Завжди свіжа продукція,
+          швидка доставка та приємні ціни. Рекомендую всім подругам!
+        </blockquote>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <h3>Контакти</h3>
+      <address id="contacts" title="Пишіть нам">
+        Rosa Bella, вул. Квіткова, 12, м. Київ, 01001<br>
+        Тел.: (044) 000-00-00<br>
+        Ел. пошта: <a href="mailto:info@rosabella.example">info@rosabella.example</a>
+      </address>
+      <h3>Розділи</h3>
+      <ul class="toc">
+        <li>Про фірму</li>
+        <li>Наші принципи</li>
+        <li>Каталог продукції</li>
+        <li>Розрахунок вартості</li>
+        <li>Умови доставки</li>
+        <li></li>
+      </ul>
+      <div class="pos-demo">
+        <span class="badge badge-tl">Акція</span>
+        <span class="badge badge-br">-40%</span>
+        <p>Осінній розпродаж триває до кінця жовтня.</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <small>© 2026 Rosa Bella (вигадана фірма). Автор сторінки: Кушнірик Євген Олександрович.</small>
+    <p class="footer-links"><a href="menu.html" title="Перейти до меню сайту">Меню сайту</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="Author" content="Кушнірик Євген Олександрович">
+<meta name="Description" content="Сторінка автора веб-проєкту. Лабораторна робота №2, варіант 9.">
+<meta name="Keywords" content="автор, веб-проєкт, HTML, CSS, лабораторна робота">
+<title>Сторінка автора веб-проєкту</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, print">
+</head>
+<body>
+
+<div id="wrapper" class="page">
+
+  <header class="site-header">
+    <h1 lang="uk" id="author-title" class="main-title">Сторінка автора веб-проєкту</h1>
+    <h5 class="subtitle" dir="ltr">Ласкаво просимо на мою домашню сторінку!</h5>
+  </header>
+
+  <nav class="menu" lang="uk" dir="ltr">
+    <ul>
+      <li><a href="index.html" title="Сторінка автора">Про автора</a></li>
+      <li><a href="company.html" title="Сторінка фірми">Про фірму</a></li>
+      <li><a href="news.html" title="Новини фірми">Новини</a></li>
+      <li><a href="lists.html" title="Інформація у вигляді списків">Списки</a></li>
+      <li><a href="menu.html" title="Меню сайту" accesskey="m">Меню сайту</a></li>
+      <li><a href="https://github.com/kushnirykyevhen/vebproglab3" target="_blank">Репозиторій</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+
+    <main class="main">
+
+      <section class="article">
+        <h2>Вітання</h2>
+        <p class="intro" lang="uk" dir="ltr">
+          Вітаю, шановний відвідувачу! Мене звати Кушнірик Євген Олександрович, я студент
+          та майбутній розробник веб-проєктів. Ця сторінка є частиною навчального сайту,
+          який я створюю в межах лабораторних робіт з веб-програмування.
+        </p>
+        <p>
+          У лабораторній роботі №1 сайт був зверстаний лише засобами HTML, а в лабораторній
+          роботі №2 до нього додано зовнішню таблицю каскадних стилів.
+        </p>
+      </section>
+
+      <section class="article">
+        <h2>Про себе</h2>
+        <h6 lang="uk" id="about-me" class="section-title">Коротка інформація</h6>
+        <p class="about" lang="uk" dir="ltr">
+          Навчаюся за спеціальністю «Комп'ютерні науки». Цікавлюся веб-технологіями,
+          дизайном інтерфейсів та програмуванням.<br title="Перенос рядка">
+          Моє хобі — фотографія та подорожі.<br title="Ще один перенос рядка">
+          Мрію створити власний інтернет-магазин косметики.
+        </p>
+        <div class="box">
+          <div class="box-inner">
+            <h3>Навчання</h3>
+            <p>Чернівецький національний університет імені Юрія Федьковича, група 241(1).</p>
+          </div>
+          <div class="box-inner">
+            <h3>Інтереси</h3>
+            <p>HTML, CSS, JavaScript, дизайн інтерфейсів, фотографія.</p>
+          </div>
+          <div class="box-inner">
+            <h3>Мета</h3>
+            <p>Створити повноцінний інтернет-магазин косметики Rosa Bella.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="article">
+        <h2>Мій веб-проєкт</h2>
+        <h6 lang="uk" id="project" class="section-title">Інтернет-магазин косметики</h6>
+        <p class="project" lang="uk" dir="ltr">
+          Тема мого проєкту — інтернет-магазин косметики
+          <big id="brand" title="Назва вигаданої фірми" lang="uk">Rosa Bella</big>.
+          Докладніше про фірму читайте на сторінці <a href="company.html">«Про фірму»</a>,
+          а свіжі події — у розділі <a href="news.html">«Новини»</a>.
+        </p>
+        <p class="status" lang="uk" dir="ltr">
+          <strike lang="uk" id="old-plan" class="old">Сайт буде готовий у вересні.</strike><br>
+          Сайт перебуває в стадії розробки, нові розділи з'являтимуться поступово.
+        </p>
+        <div class="float-demo">
+          <div class="float-left">Лаб. №1<br>HTML</div>
+          <div class="float-right">Лаб. №2<br>CSS</div>
+          <p>Перша лабораторна робота дала структуру сайту, друга — його оформлення.
+            Ці два блоки є плаваючими, а текст обтікає їх з обох боків.</p>
+          <p class="clear-right">Цей абзац починається нижче правого плаваючого блоку.</p>
+        </div>
+      </section>
+
+      <section class="article">
+        <h2>Написати автору</h2>
+        <form class="feedback" action="#" method="get">
+          <p>
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" placeholder="Ваше ім'я">
+          </p>
+          <p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </p>
+          <p>
+            <label for="msg">Повідомлення:</label>
+            <textarea id="msg" name="msg" rows="3" data-role="comment"></textarea>
+          </p>
+          <p class="checks">
+            <input type="checkbox" id="agree" name="agree" checked>
+            <label for="agree">Погоджуюсь з умовами</label>
+            <input type="checkbox" id="news" name="news">
+            <label for="news">Отримувати новини</label>
+          </p>
+          <p>
+            <button type="submit" class="btn">Надіслати</button>
+            <button type="reset" class="btn btn-secondary">Очистити</button>
+          </p>
+        </form>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+      <h3>Зміст сторінки</h3>
+      <ul class="toc">
+        <li>Вітання</li>
+        <li>Про себе</li>
+        <li></li>
+        <li>Мій веб-проєкт</li>
+        <li>Написати автору</li>
+      </ul>
+      <h3>Лабораторні роботи</h3>
+      <table class="grid">
+        <thead>
+          <tr><th>№</th><th>Тема</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Статичний сайт, HTML</td></tr>
+          <tr><td>2</td><td>Оформлення, CSS</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Варіант 9</td></tr>
+        </tfoot>
+      </table>
+      <p class="note">Прихований фрагмент: <span class="hidden-text">цього тексту не видно</span>, але місце він займає.</p>
+      <p class="note"></p>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <small lang="uk" id="copyright" class="note">© 2026, Кушнірик Євген Олександрович. Усі права захищено.</small>
+    <p class="footer-links"><a href="menu.html" title="Перейти до меню сайту">Меню сайту</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="Author" content="Кушнірик Євген Олександрович">
+<meta name="Description" content="Меню сайту Rosa Bella. Лабораторна робота №3, варіант 9.">
+<meta name="Keywords" content="Rosa Bella, меню сайту, навігація">
+<title>Меню сайту Rosa Bella</title>
+<!-- <link>: sizes, title, href, class, media -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, print"
+      title="Основний стиль Rosa Bella" class="main-style">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml" sizes="any"
+      title="Іконка сайту Rosa Bella" class="site-icon" media="all">
+<link rel="next" href="lists.html" title="Наступна сторінка: списки"
+      class="nav-link" media="all">
+</head>
+<body>
+
+<div id="wrapper" class="page">
+
+  <header class="site-header" id="top">
+    <h1>Меню сайту</h1>
+    <h5 class="subtitle">Навігація по веб-проєкту Rosa Bella</h5>
+  </header>
+
+  <nav class="menu" lang="uk" dir="ltr">
+    <ul>
+      <li><a href="index.html" title="Сторінка автора">Про автора</a></li>
+      <li><a href="company.html" title="Сторінка фірми">Про фірму</a></li>
+      <li><a href="news.html" title="Новини фірми">Новини</a></li>
+      <li><a href="lists.html" title="Інформація у вигляді списків">Списки</a></li>
+      <li><a href="menu.html" title="Меню сайту" accesskey="m" class="current">Меню сайту</a></li>
+      <li><a href="https://github.com/kushnirykyevhen/vebproglab3" target="_blank">Репозиторій</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+
+    <main class="main">
+
+      <!-- Внутрішні посилання на поточну сторінку -->
+      <section class="article" id="here">
+        <h2>На цій сторінці</h2>
+        <p>Меню містить посилання на всі сторінки проєкту, на розділи інших сторінок та на корисні файли.</p>
+        <ul class="toc inner-links" title="Розділи сторінки" compact>
+          <li><a href="#pages" id="go-pages" title="Сторінки сайту" accesskey="1" type="text/html">Сторінки сайту</a></li>
+          <li><a href="#sections" id="go-sections" title="Швидкі переходи" accesskey="2" type="text/html">Швидкі переходи</a></li>
+          <li><a href="#files" id="go-files" title="Файли для завантаження" accesskey="3" type="text/html">Файли для завантаження</a></li>
+        </ul>
+      </section>
+
+      <!-- Меню з посиланнями на всі сторінки -->
+      <section class="article" id="pages">
+        <h2>Сторінки сайту</h2>
+        <!-- <menu>: class, id;  <menuitem>: id, class -->
+        <menu class="site-menu" id="site-menu">
+          <li><menuitem id="mi-author" class="menu-item">
+            <a href="index.html" id="link-author" accesskey="a" type="text/html" rev="contents"
+               coords="0,0,260,80" title="Сторінка автора">
+              <span class="mi-title">Про автора</span>Хто створив сайт</a>
+          </menuitem></li>
+          <li><menuitem id="mi-company" class="menu-item">
+            <a href="company.html" id="link-company" accesskey="c" type="text/html" rev="contents"
+               coords="0,0,260,80" title="Сторінка фірми">
+              <span class="mi-title">Про фірму</span>Каталог, доставка, контакти</a>
+          </menuitem></li>
+          <li><menuitem id="mi-news" class="menu-item">
+            <a href="news.html" id="link-news" accesskey="n" type="text/html" rev="contents"
+               coords="0,0,260,80" title="Новини фірми">
+              <span class="mi-title">Новини</span>Події та акції Rosa Bella</a>
+          </menuitem></li>
+          <li><menuitem id="mi-lists" class="menu-item">
+            <a href="lists.html" id="link-lists" accesskey="l" type="text/html" rev="contents"
+               coords="0,0,260,80" title="Інформація у вигляді списків">
+              <span class="mi-title">Списки</span>Історія, асортимент, терміни</a>
+          </menuitem></li>
+        </menu>
+      </section>
+
+      <!-- Посилання на розділи іншої сторінки -->
+      <section class="article" id="sections">
+        <h2>Швидкі переходи</h2>
+        <ol type="1" class="steps quick" id="quick-list" lang="uk" style="padding-left: 0;">
+          <li class="step" title="Історія"><a href="lists.html#history" id="q-history" type="text/html">Історія фірми</a></li>
+          <li class="step" title="Асортимент"><a href="lists.html#catalog" id="q-catalog" type="text/html">Асортимент</a></li>
+          <li class="step" title="Замовлення"><a href="lists.html#order" id="q-order" type="text/html">Як оформити замовлення</a></li>
+          <li class="step" title="Словник"><a href="lists.html#terms" id="q-terms" type="text/html">Словник термінів</a></li>
+        </ol>
+      </section>
+
+      <!-- Посилання з атрибутом download -->
+      <section class="article" id="files">
+        <h2>Файли для завантаження</h2>
+        <ul class="downloads" title="Файли" value="square" compact>
+          <li class="file" title="Логотип"><a href="img/logo.svg" id="dl-logo" download="rosa-bella-logo.svg"
+                 type="image/svg+xml" accesskey="g">Логотип Rosa Bella (SVG)</a></li>
+          <li class="file" title="Стилі"><a href="css/style.css" id="dl-css" download="rosa-bella-style.css"
+                 type="text/css">Таблиця стилів сайту (CSS)</a></li>
+        </ul>
+      </section>
+
+      <p class="to-top">
+        <a href="#top" id="to-top" class="btn" title="На початок сторінки" accesskey="t" type="text/html">↑ На початок</a>
+      </p>
+
+    </main>
+
+    <aside class="sidebar">
+      <h3>Гарячі клавіші</h3>
+      <ul class="toc keys" title="Клавіші доступу" compact>
+        <li><nobr class="key">Alt + A</nobr> — про автора</li>
+        <li><nobr class="key">Alt + C</nobr> — про фірму</li>
+        <li><nobr class="key">Alt + N</nobr> — новини</li>
+        <li><nobr class="key">Alt + L</nobr> — списки</li>
+        <li><nobr class="key">Alt + T</nobr> — на початок</li>
+      </ul>
+      <p class="note">У Firefox використовується комбінація <nobr class="key">Alt + Shift</nobr>.</p>
+    </aside>
+
+  </div>
+
+  <footer class="site-footer">
+    <small>© 2026 Rosa Bella (вигадана фірма). Автор сторінки: Кушнірик Євген Олександрович.</small>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,969 @@
+@charset "UTF-8";
+
+/* ============================================================
+   Лабораторна робота №2. Варіант 9. Сайт «Rosa Bella».
+   Головна таблиця стилів. Обов'язкові селектори, псевдокласи,
+   псевдоелементи, директиви та властивості позначені коментарями.
+   ============================================================ */
+
+/* Директива @import — включення базової таблиці стилів */
+@import url("base.css");
+
+/* ------------------------------------------------------------
+   1. Обгортка сторінки
+   ------------------------------------------------------------ */
+
+.page {                                   /* селектор класу */
+  width: 92%;                             /* width */
+  max-width: 1100px;                      /* max-width */
+  margin: auto;                           /* margin: auto — центрування блоку */
+  margin-top: 24px;                       /* margin-top: <розмір> */
+  margin-bottom: 24px;                    /* margin-bottom: <розмір> */
+  background-color: #fffafc;
+  border-width: thin;                     /* border-width: thin */
+  border-style: solid;
+  border-color: #f1b6c9;                  /* border-color: <колір> */
+  position: static;                       /* position: static */
+  overflow: visible;                      /* overflow: visible */
+}
+
+/* ------------------------------------------------------------
+   2. Шапка
+   ------------------------------------------------------------ */
+
+.site-header {
+  padding-top: 28px;                      /* padding-top: <розмір> */
+  padding-left: 32px;                     /* padding-left: <розмір> */
+  padding-right: 32px;                    /* padding-right: <розмір> */
+  padding-bottom: 22px;
+  color: #fff;
+  background-color: #c2185b;
+  background-image: url("../img/wave.svg");
+  background-attachment: scroll;
+  background-position: bottom;            /* background-position: bottom */
+  background-repeat: repeat-x;
+  border-bottom-color: #880e4f;           /* border-bottom-color: <колір> */
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+
+.site-header h1 {                         /* контекстний селектор */
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.site-header .subtitle {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #fde4ec;
+}
+
+/* ------------------------------------------------------------
+   3. Меню: селектор дітей, селектор сусідів,
+      псевдокласи :link, :active, :first-child, :last-child,
+      селектори атрибутів
+   ------------------------------------------------------------ */
+
+.menu > ul {                              /* селектор дітей (>) */
+  list-style: none;
+  background-color: #880e4f;
+  padding-left: 16px;
+}
+
+.menu > ul > li {
+  display: inline;                        /* display: inline */
+}
+
+.menu > ul > li + li::before {            /* селектор сусідів (+) */
+  content: "|";
+  color: #d98bb0;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.menu a {
+  display: inline-block;
+  padding-top: 12px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  border-top-style: none;                 /* border-top-style: none */
+  border-top-width: 4px;
+  border-top-color: transparent;
+}
+
+.menu a:link {                            /* псевдоклас :link — невідвідане посилання */
+  color: #fde4ec;
+}
+
+.menu a:visited {
+  color: #f1b6c9;
+}
+
+.menu a:hover {
+  color: #fff;
+  background-color: #c2185b;
+  border-top-style: double;               /* border-top-style: double */
+  border-top-color: #fde4ec;              /* border-top-color: <колір> */
+}
+
+.menu a:active {                          /* псевдоклас :active — натиснуте посилання */
+  color: #ffd54f !important;              /* !important */
+  background-color: #5e0a36;
+}
+
+.menu > ul > li:first-child a {           /* псевдоклас :first-child */
+  font-weight: bold;
+}
+
+.menu > ul > li:last-child a {            /* псевдоклас :last-child */
+  font-style: italic;
+}
+
+/* Селектор атрибутів [attr] — усі елементи з атрибутом title */
+a[title] {
+  letter-spacing: 0.03em;
+}
+
+/* Селектор атрибутів [attr=value] — посилання, що відкриваються в новій вкладці */
+a[target="_blank"]::after {
+  content: " \2197";                      /* ↗ */
+  font-size: 0.8em;
+}
+
+/* Селектор атрибутів [attr*=value] — посилання, що містять "github" */
+a[href*="github"] {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+/* ------------------------------------------------------------
+   4. Основна сітка: два стовпці через float
+   ------------------------------------------------------------ */
+
+.content {
+  padding-top: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+}
+
+.content::after {                         /* очищення обтікання */
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.main {
+  float: left;                            /* float: left */
+  width: 66%;
+  min-height: 300px;                      /* min-height: <розмір> */
+}
+
+.sidebar {
+  float: right;                           /* float: right */
+  width: 30%;
+  min-height: 0;                          /* min-height: (нуль) */
+  max-height: none;                       /* max-height: none */
+  padding-top: 16px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 16px;
+  background-color: #fdeaf0;
+  border-left-width: thin;                /* border-left-width: thin */
+  border-left-style: double;              /* border-left-style: double */
+  border-left-color: #c2185b;
+  border-right-width: 1px;                /* border-right-width: <розмір> */
+  border-right-style: dashed;             /* border-right-style: dashed */
+  border-right-color: #f1b6c9;
+  border-top-style: hidden;               /* border-top-style: hidden */
+  border-bottom-style: none;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #880e4f;
+  font-size: 1.05rem;
+}
+
+.sidebar h3 + * {                         /* універсальний селектор + сусід */
+  margin-bottom: 20px;
+}
+
+.sidebar address {
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.sidebar a { color: #c2185b; }
+
+.site-footer {
+  clear: none;                            /* clear: none */
+  padding-top: 14px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 14px;
+  background-color: #880e4f;
+  color: #fde4ec;
+  text-align: center;
+}
+
+.site-footer small {
+  font-size: 0.85rem;
+  color: #fde4ec !important;             /* !important — перекриває .note з лаб. №1 */
+}
+
+/* ------------------------------------------------------------
+   5. Статті: псевдоелементи, :not(), сусіди
+   ------------------------------------------------------------ */
+
+.article {
+  margin-bottom: 32px;
+  padding-left: 18px;
+  border-left-width: 4px;                 /* border-left-width: <розмір> */
+  border-left-style: dashed;              /* border-left-style: dashed */
+  border-left-color: #f1b6c9;
+}
+
+.article:last-child {
+  margin-bottom: 0;
+}
+
+.article h2 {
+  color: #880e4f;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #f8d7e0;
+}
+
+.article h3 {
+  color: #c2185b;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.article h6 {
+  color: #c2185b;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.article p {
+  margin-bottom: 10px;
+  line-height: 1.55;                      /* line-height: <число> */
+  text-align: justify;
+}
+
+.article a { color: #c2185b; }
+
+.article h2 + p {                         /* селектор сусідів: перший абзац після h2 */
+  font-size: 1.05rem;
+}
+
+.article h2 + p:not(.scrollbox)::first-letter {   /* :not() */           /* псевдоелемент ::first-letter */
+  font-size: 2.2em;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  float: left;
+  line-height: 0.85;
+  margin-top: 4px;
+  padding-right: 6px;
+  color: #c2185b;
+}
+
+.article h2 + p:not(.scrollbox)::first-line {             /* псевдоелемент ::first-line */
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+}
+
+.article p:not(h2 + p) {                  /* псевдоклас :not() — решта абзаців */
+  color: #4a3340;
+}
+
+/* теги з лабораторної №1 */
+big   { font-size: 1.3em; color: #c2185b; font-weight: bold; }
+strike { color: #9a7f8c; }
+abbr  { border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #c2185b; cursor: help; }
+var   { font-style: italic; color: #880e4f; }
+mark  { background-color: #ffe082; padding-left: 2px; padding-right: 2px; }
+time  { font-weight: bold; color: #880e4f; }
+.chem { color: #c2185b; }
+.accent { color: #c2185b; font-weight: bold; }
+.mirror { background-color: #fff3c4; padding-left: 4px; padding-right: 4px; unicode-bidi: embed; }  /* unicode-bidi: embed */
+
+.delivery {
+  background-color: #fff;
+  padding-top: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  overflow: visible;
+}
+
+.review {
+  padding-left: 16px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  color: #6a1b4d;
+  font-style: italic;
+  border-left-width: 4px;
+  border-left-style: double;              /* border-left-style: double */
+  border-left-color: #c2185b;
+}
+
+/* ------------------------------------------------------------
+   6. Вкладені блоки (кілька рівнів вкладеності)
+   ------------------------------------------------------------ */
+
+.box {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.box > .box-inner {                       /* селектор дітей */
+  flex: 1;
+  padding-top: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  background-color: #fff;
+  border-width: 1px;                      /* border-width: <розмір> */
+  border-style: solid;
+  border-color: #f1b6c9;
+  border-top-style: double;               /* border-top-style: double */
+  border-top-color: #c2185b;
+  border-top-width: 4px;
+}
+
+.box-inner h3 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.box-inner p {
+  font-size: 0.9rem;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.figure {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.figure img {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  background-color: #fff;
+  padding-top: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+}
+
+.figure figcaption {
+  font-size: 0.85rem;
+  color: #7a5c6a;
+  margin-top: 6px;
+}
+
+/* блоки новин */
+.news-block {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  border-right-style: double;             /* border-right-style: double */
+  border-right-width: 4px;
+  border-right-color: #f8d7e0;
+  padding-top: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+}
+
+.news-block p { text-align: left; }
+
+/* ------------------------------------------------------------
+   7. Плаваючі елементи та clear
+   ------------------------------------------------------------ */
+
+.float-left,
+.float-right {
+  width: 110px;
+  min-height: 60px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #fff;
+  background-color: #c2185b;
+  margin-bottom: 8px;
+}
+
+.float-left  { float: left;  margin-right: 12px; }
+.float-right { float: right; margin-left: 12px; max-height: 60px; }   /* max-height: <розмір> */
+
+.clear-right {
+  clear: right;                           /* clear: right */
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------
+   8. Форма: :checked, :empty, селектори атрибутів, outline
+   ------------------------------------------------------------ */
+
+.feedback {
+  background-image: url("../img/wave.svg");
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  background-position: top;               /* background-position: top */
+  padding-top: 30px;
+}
+
+.feedback p { text-align: left; }
+
+.feedback label {
+  display: inline-block;
+  min-width: 120px;
+  vertical-align: middle;                 /* vertical-align: middle */
+}
+
+.feedback input[type="text"],
+.feedback input[type="email"],
+.feedback textarea {                      /* [attr=value] */
+  width: 60%;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 6px;
+  vertical-align: middle;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  outline-style: none;                    /* outline-style */
+}
+
+.feedback input:focus,
+.feedback textarea:focus {
+  outline: 2px solid #c2185b;             /* outline (скорочена властивість) */
+}
+
+textarea[data-role*="comm"] {             /* [attr*=value] */
+  resize: vertical;
+}
+
+.checks label {
+  min-width: 0;
+  margin-right: 16px;
+}
+
+.checks input:checked + label {           /* псевдоклас :checked */
+  color: #c2185b;
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding-top: 8px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 8px;
+  margin-top: 4px;
+  color: #fff;
+  background-color: #c2185b;
+  border-width: thin;
+  border-style: solid;
+  border-color: #880e4f;
+  cursor: pointer;
+  vertical-align: baseline;               /* vertical-align: baseline */
+}
+
+.btn:active { background-color: #5e0a36; }
+
+.btn-secondary {
+  background-color: #9a7f8c;
+  border-color: #6f5563;
+}
+
+/* ------------------------------------------------------------
+   9. Абсолютне позиціювання, z-index, clip
+   ------------------------------------------------------------ */
+
+.pos-demo {
+  position: relative;
+  min-height: 90px;
+  padding-top: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 28px;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  font-size: 0.9rem;
+}
+
+.badge {
+  position: absolute;                     /* position: absolute */
+  z-index: auto;                          /* z-index: auto */
+  padding-top: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 3px;
+  font-size: 0.75rem;
+  color: #fff;
+  background-color: #c2185b;
+}
+
+.badge-tl { top: 0; left: 0; }
+.badge-br {
+  bottom: 0;
+  right: 0;
+  clip: rect(0, 60px, 24px, 0);           /* clip: rect(top, right, bottom, left) */
+}
+
+/* ------------------------------------------------------------
+   10. Переповнення, видимість
+   ------------------------------------------------------------ */
+
+.scrollbox {
+  max-height: 80px;                       /* max-height: <розмір> */
+  overflow: scroll;                       /* overflow: scroll */
+  padding-top: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-width: thin;
+  border-style: solid;
+  border-color: #f1b6c9;
+  background-color: #fff;
+}
+
+.hidden-text {
+  visibility: hidden;                     /* visibility: hidden */
+}
+
+.note {
+  visibility: visible;                    /* visibility: visible */
+  font-size: 0.85rem;
+  color: #6f5563;
+  line-height: 1.5;
+}
+
+.note:empty {                             /* псевдоклас :empty — порожній абзац */
+  display: none;
+}
+
+/* ------------------------------------------------------------
+   11. Таблиці: display: table-cell / table-footer-group /
+       inline-table, vertical-align
+   ------------------------------------------------------------ */
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.grid th,
+.grid td {
+  display: table-cell;                    /* display: table-cell */
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  vertical-align: text-bottom;            /* vertical-align: text-bottom */
+}
+
+.grid th {
+  background-color: #c2185b;
+  color: #fff;
+  text-align: left;
+}
+
+.grid tfoot {
+  display: table-footer-group;            /* display: table-footer-group */
+  font-style: italic;
+  background-color: #fdeaf0;
+}
+
+.grid tbody tr:first-child td { font-weight: bold; }       /* :first-child */
+
+.grid tbody tr:last-child td {                              /* :last-child */
+  border-bottom-color: #c2185b;
+  border-bottom-width: 2px;
+}
+
+.catalog { font-size: 0.95rem; }
+.catalog td:last-child { text-align: right; }
+
+.mini-table {
+  display: inline-table;                  /* display: inline-table */
+  vertical-align: middle;
+  border-width: thin;
+  border-style: solid;
+  border-color: #c2185b;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 0.85rem;
+}
+
+.mini-row  { display: table-row; }
+.mini-cell {
+  display: table-cell;
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+   12. Список у сайдбарі: :empty, маркери, vertical-align: <розмір>,
+       display: compact / marker
+   ------------------------------------------------------------ */
+
+.toc {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  padding-top: 4px;
+  padding-left: 18px;
+  padding-bottom: 4px;
+  position: relative;
+  font-size: 0.9rem;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  border-bottom-color: #f1b6c9;
+  vertical-align: 1px;                    /* vertical-align: <розмір> */
+}
+
+.toc li::before {
+  content: "\2767";                       /* ❧ */
+  position: absolute;
+  left: 0;
+  color: #c2185b;
+  display: marker;                        /* display: marker (CSS2; сучасні браузери ігнорують) */
+}
+
+.toc li:empty { display: none; }          /* :empty — порожній пункт списку */
+
+.toc li:last-child { border-bottom-style: none; }
+
+.sidebar h3 {
+  display: compact;                       /* display: compact (CSS2) */
+  display: block;                         /* резервне значення */
+}
+
+/* ------------------------------------------------------------
+   13. Директива @media — друк і малі екрани
+   ------------------------------------------------------------ */
+
+@media print {
+  body { background-image: none; background-color: #fff; }
+  .menu, .site-footer, .feedback { display: none; }
+  .page { width: 100%; max-width: none; border-style: none; }
+}
+
+@media screen and (max-width: 760px) {
+  .main, .sidebar { float: none; width: 100%; }
+  .sidebar {
+    margin-top: 20px;
+    border-left-style: none;              /* border-left-style: none */
+    border-right-style: none;             /* border-right-style: none */
+    border-top-style: double;
+    border-top-color: #c2185b;
+    border-top-width: 4px;
+  }
+  .box { flex-direction: column; }
+  .menu > ul > li { display: block; }
+  .menu > ul > li + li::before { content: none; }
+}
+
+/* ============================================================
+   Лабораторна робота №3. Варіант 9. Списки, меню, гіперпосилання.
+   Властивості: list-style-type, list-style-image, list-style-position,
+   list-style, marker-offset, content, counter-reset, counter-increment
+   ============================================================ */
+
+/* ---------- 14. Навігація: поточна сторінка, підвал ---------- */
+
+.menu a.current {
+  color: #fff;
+  background-color: #c2185b;
+}
+
+.footer-links {
+  margin-top: 6px;
+  font-size: 0.85rem;
+}
+
+.footer-links a:link,
+.footer-links a:visited {
+  color: #ffd54f;
+}
+
+/* ---------- 15. Рядок, що біжить (marquee) ---------- */
+
+.ticker {
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #880e4f;
+  font-weight: bold;
+  background-color: #fde4ec;
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: #f1b6c9;
+}
+
+/* ---------- 16. Нумерований список: історія ---------- */
+
+.history {
+  list-style-type: decimal;               /* list-style-type: decimal */
+  list-style-position: outside;           /* list-style-position: outside */
+  padding-left: 56px;
+}
+
+.history li {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  marker-offset: 12px;                    /* marker-offset (CSS2; сучасні браузери ігнорують) */
+}
+
+.history li::marker {                     /* псевдоелемент ::marker — сучасна заміна marker-offset */
+  color: #c2185b;
+  font-weight: bold;
+  font-family: Georgia, serif;
+}
+
+/* ---------- 17. Маркований список з вкладеними списками ---------- */
+
+.goods {
+  list-style-image: url("../img/flower.svg");   /* list-style-image: <uri> */
+  list-style-position: outside;
+  padding-left: 28px;
+}
+
+.goods > li.group {                       /* селектор дітей */
+  padding-top: 6px;
+  font-weight: bold;
+  color: #880e4f;
+}
+
+.sub-goods {
+  list-style: circle inside;              /* скорочена властивість list-style */
+  padding-left: 12px;
+  font-weight: normal;
+  color: #3a2630;
+}
+
+.sub-goods li[type="square"] {            /* селектор атрибутів */
+  list-style-type: square;                /* list-style-type: square */
+}
+
+.sub-new {
+  list-style: lower-alpha inside;         /* list-style: lower-alpha inside */
+  font-weight: normal;
+  color: #3a2630;
+}
+
+.sub-new li.new::after {                  /* content у псевдоелементі ::after */
+  content: " — новинка!";
+  color: #c2185b;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+/* ---------- 18. Власна нумерація: counter-reset / counter-increment ---------- */
+
+.steps {
+  list-style: none;                       /* list-style: none */
+  counter-reset: step;                    /* counter-reset */
+}
+
+.steps li.step {
+  counter-increment: step;                /* counter-increment */
+  position: relative;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  padding-left: 86px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f8d7e0;
+  border-left-width: 4px;
+  border-left-color: #c2185b;
+}
+
+.steps li.step::before {
+  content: "Крок " counter(step);         /* content + counter() */
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  width: 62px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #c2185b;
+}
+
+/* ---------- 19. Список визначень ---------- */
+
+.definitions dt {
+  margin-top: 12px;
+  color: #880e4f;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.definitions dt::before {
+  content: "\2740  ";                     /* ❀ */
+  color: #c2185b;
+}
+
+.definitions dd {
+  margin-left: 24px;
+  margin-top: 4px;
+  padding-left: 10px;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: #f8d7e0;
+}
+
+/* ---------- 20. Бренди, <bdi>, <nobr> ---------- */
+
+.brands {
+  list-style-type: disc;                  /* list-style-type: disc */
+  list-style-position: inside;            /* list-style-position: inside */
+}
+
+.brands li { padding-top: 3px; padding-bottom: 3px; }
+
+.brand-name {                             /* <bdi class="brand-name"> */
+  font-weight: bold;
+  color: #c2185b;
+}
+
+.price,
+.phone,
+.key,
+.code {                                   /* <nobr> — текст без переносу */
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.key {
+  padding-left: 4px;
+  padding-right: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 0.85em;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+}
+
+/* ---------- 21. Меню сайту: <menu>, <menuitem> ---------- */
+
+.site-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.site-menu menuitem {                     /* <menuitem> як блок-картка */
+  display: block;
+  height: 100%;
+}
+
+.site-menu a {
+  display: block;
+  height: 100%;
+  padding-top: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 14px;
+  color: #4a3340;
+  text-decoration: none;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f1b6c9;
+  border-top-width: 4px;
+  border-top-style: double;
+  border-top-color: #c2185b;
+}
+
+.site-menu a:hover {
+  background-color: #fdeaf0;
+}
+
+.mi-title {
+  display: block;
+  margin-bottom: 4px;
+  color: #c2185b;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+}
+
+/* посилання для завантаження: селектор атрибутів [download] */
+a[download]::after {
+  content: " \2B07";                      /* ⬇ */
+  color: #c2185b;
+}
+
+.downloads {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+.to-top {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.to-top .btn { text-decoration: none; }
+.to-top .btn:link,
+.to-top .btn:visited { color: #fff; }
+
+@media screen and (max-width: 760px) {
+  .site-menu { grid-template-columns: 1fr; }
+}

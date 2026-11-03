@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/* ============================================================
+   base.css — базові правила, що включаються у style.css
+   директивою @import: скидання відступів, шрифти, фон документа.
+   ============================================================ */
+
+/* Універсальний селектор — скидання границь і заповнювачів усіх елементів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: normal;                            /* line-height: normal */
+  direction: ltr;                                 /* direction: ltr */
+  unicode-bidi: normal;                           /* unicode-bidi: normal */
+}
+
+body {
+  color: #3a2630;                                 /* color: <колір> */
+  background-color: #fdf2f5;                      /* background-color: <колір> */
+  background-image: url("../img/pattern.svg");    /* background-image: <uri> */
+  background-attachment: scroll;                  /* background-attachment: scroll */
+  background-position: 0 0;                       /* background-position: <розмір> {1,2} */
+  background-repeat: repeat;
+  min-height: 100vh;                              /* min-height: <розмір> */
+}
+
+h1, h2, h3, h5, h6 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.25;                              /* line-height: <число> */
+}
+
+code, var, pre {
+  font-family: "Courier New", monospace;
+}
+
+code {
+  background-color: #fff;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-width: thin;                             /* border-width: thin */
+  border-style: solid;
+  border-color: #f1b6c9;                          /* border-color: <колір> */
+}
